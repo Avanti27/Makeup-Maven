@@ -1,0 +1,55 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}"/>
+    
+    <title>Index</title>
+</head>
+<body>
+   <div class="container-fluid shadow abc">
+    <div="row">
+      <style>
+      .ac{
+        font-size:20px;
+      }
+      </style>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+             <b class="ac"><i><a class="navbar-brand xyz" href="{% url 'apphome' %}">MAKEUP MAVEN</a></i></b>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 
+                  <li class="nav-item ac">
+                    <a href="{% url 'productform' %}" class="nav-link active ms-4" style="color:deeppink">Products</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item ac">
+                    <a href="/logout" class="nav-link active ms-4" style="color:deeppink">logout</a>
+                  </li>
+  
+                  {% else %}
+                  <li class="nav-item ac">
+                    <a href="/login" class="nav-link active ms-4" style="color:deeppink">Login</a>
+                  </li>
+                  <li class="nav-item ac">
+                    <a href="/register" class="nav-link active ms-4" style="color:deeppink">Register</a>
+                  </li>
+                  {% endif %}
+                </ul>
+                <form class="d-flex" role="search">
+              <b class="ac"><a href="/cart" style="text-decoration:none; color:deeppink;" type="submit"><i class="bi bi-bag"></i>&nbsp;My Bag</a></b>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </div>
+   </div>
+
+</body>
+</html>
